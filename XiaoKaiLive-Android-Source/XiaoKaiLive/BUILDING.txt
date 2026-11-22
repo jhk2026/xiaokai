@@ -1,0 +1,19 @@
+小凯直播 Android 项目构建说明
+
+本项目当前交付为 Android Studio 源码，尚未编译成 APK，也未完成真机测试。
+
+方式一：用电脑上的 Android Studio
+1. 解压 XiaoKaiLive-Android-Source.zip。
+2. Android Studio -> Open -> 选择 XiaoKaiLive 文件夹。
+3. 等待 Gradle 同步完成（首次需要联网下载依赖）。
+4. Build -> Build Bundle(s) / APK(s) -> Build APK(s)。
+5. APK 输出：app/build/outputs/apk/debug/app-debug.apk。
+
+方式二：用 GitHub 云端编译（不需要本地安装 Android Studio）
+1. 登录 GitHub，创建一个新的空仓库。
+2. 将解压后的 XiaoKaiLive 文件夹内所有文件上传到仓库根目录（包括 .github 文件夹）。
+3. 打开仓库的 Actions 页面，选择 “Build XiaoKaiLive APK”。
+4. 点击 Run workflow，等待构建完成。
+5. 在该次运行页面底部的 Artifacts 下载 XiaoKaiLive-debug-apk.zip，解压即可得到 app-debug.apk。
+
+说明：首次云端构建需要网络下载 Android Gradle Plugin 和依赖。debug APK 适合个人测试安装；正式发布还需要生成自己的签名密钥并构建 release APK。
